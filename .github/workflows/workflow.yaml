@@ -1,7 +1,10 @@
 name: Workflow Example
 on:
   workflow_dispatch:
-
+  push:
+    branches:
+      - master
+      
 jobs:
   pr-workflow:
     name: PR Workflow

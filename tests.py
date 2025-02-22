@@ -17,6 +17,12 @@ class TestUser(unittest.TestCase):
             {"start_date": "2018-01-01"},
             {"start_date": "2019-01-01"}                   
         ]
+        self.user.certifications = [
+            {"date": "2018-06-01"},
+            {"date": "2019-02-01"},
+            {"date": "2019-11-01"},
+            {"date": "2020-07-01"}
+        ]
 
 
     def test_sort_user_experience(self):
@@ -28,7 +34,17 @@ class TestUser(unittest.TestCase):
             {"start_date": "2017-01-01"},
             {"start_date": "2016-01-01"}
         ]
+
+        certifications_expected_result = [
+            {"date": "2020-07-01"},
+            {"date": "2019-11-01"},
+            {"date": "2019-02-01"},
+            {"date": "2018-06-01"}            
+        ]
+
         self.user.sort_user_experience()
+        self.user.sort_user_certifications()
+        self.assertEqual(self.user.certifications, certifications_expected_result)
         self.assertEqual(self.user.experiences, expected_result)                      
 
 

@@ -18,7 +18,7 @@ jobs:
       - name: Deploy to AWS
         run: |
           rm -rf .git
-          scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /tmp/aws_keypair.pem -r . ubuntu@${{ secrets.AWS_IP }}:simpleresume-febri
+          scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /tmp/aws_keypair.pem -r . ubuntu@${{ secrets.AWS_IP }}:simpleresume-febriantosurya
       - name: Restart the systemd service
         run: |
           ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /tmp/aws_keypair.pem ubuntu@${{ secrets.AWS_IP }} "sudo systemctl restart web"

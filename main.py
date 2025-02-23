@@ -2,6 +2,7 @@
 """
 from flask import Flask, render_template, make_response
 from users import load_dummy_users
+from flask_wtf.csrf import CSRFProtect
 
 
 # Configuration

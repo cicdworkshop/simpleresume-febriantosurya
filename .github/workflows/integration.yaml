@@ -1,4 +1,4 @@
-name: Workflow Example
+name: Code Integration
 on:
   workflow_dispatch:
   push:
